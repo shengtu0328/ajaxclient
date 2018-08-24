@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/1.11.3/jquery.js"></script>
 </head>
 <body>
 
 <a href="#" onclick="get1()">发送get1请求</a>
-
+<!--
+<img src="http://localhost:8080/test/get1" alt="">
+-->
 <script>
     function get1() {
 /*
@@ -20,6 +22,17 @@
           }
         );
     }
+
+
+    $.ajax({
+        url:"http://localhost:8080/test/get1",
+        dataType:"jsonp",
+        jsonp:"callback2",
+        success:function(json){
+        console.log("jsonp"+json)
+        }
+    })
+
 
 </script>
 </body>
