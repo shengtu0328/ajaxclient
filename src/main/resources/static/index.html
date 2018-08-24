@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+
+<a href="#" onclick="get1()">发送get1请求</a>
+
+<script>
+    function get1() {
+/*
+        $.getJSON()是专门为ajax获取json数据而设置的，并且支持跨域调用
+*/
+        $.getJSON("http://localhost:8080/test/get1").then(
+          function (value) {
+              console.log(value)
+          }
+        );
+    }
+
+</script>
+</body>
+</html>
